@@ -36,7 +36,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Missa Dominical"
+                    android:text="@string/missa_dominical"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
 
