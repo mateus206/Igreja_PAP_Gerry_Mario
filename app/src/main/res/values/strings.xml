@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Igrejas</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="signup">Signup</string>
+    <string name="igreja">Igreja+</string>
+    <string name="slogan">Tudo da tua igreja numa só app</string>
+    <string name="sign_in">Sign In</string>
+    <string name="voltar_login">Já tens conta? Faz Login</string>
+    <string name="vai_signUp">Não tens conta? Regista-te</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="pedir">Pedir oração</string>
+    <string name="eventos">Eventos</string>
+</resources>
