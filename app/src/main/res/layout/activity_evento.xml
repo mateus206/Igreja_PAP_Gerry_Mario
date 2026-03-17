@@ -1,311 +1,855 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/main"
-    android:background="@color/baby_blue">
-
-
+    android:background="#F3F4F6">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="16dp">
 
-        <!-- CARD 1 -->
-        <ImageView
-            android:id="@+id/imageView3"
+        <!-- HEADER -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/logoigreja" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp">
 
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="6dp">
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="12dp"
+                app:srcCompat="@drawable/logoigreja" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/missa_dominical"
+                    android:text="Agenda da Comunidade"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="#1C1C1E"/>
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Data: 22 Março 2026"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Hora: 10:00"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Celebração da missa com toda a comunidade."/>
-
+                    android:text="Março — Abril 2026"
+                    android:textSize="13sp"
+                    android:textColor="#6B7280"/>
             </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
 
-        <!-- CARD 2 -->
+        <!-- CARD 1 — Missa Dominical -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="6dp">
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#E5E7EB">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
+                <!-- Badge de data -->
+                <LinearLayout
+                    android:layout_width="52dp"
+                    android:layout_height="56dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_badge_purple"
+                    android:layout_marginEnd="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="22"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#3C3489"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MAR"
+                        android:textSize="10sp"
+                        android:textColor="#534AB7"/>
+                </LinearLayout>
+
+                <!-- Conteúdo -->
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Grupo de Oração"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Data: 23 Março 2026"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Missa"
+                        android:textSize="11sp"
+                        android:textColor="#534AB7"
+                        android:background="@drawable/bg_pill_purple"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:layout_marginBottom="5dp"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Hora: 20:00"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Missa Dominical"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#1C1C1E"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Momento de oração e partilha entre os membros."/>
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10:00 · Celebração com toda a comunidade"
+                        android:textSize="12sp"
+                        android:textColor="#6B7280"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+                </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- CARD 3 -->
+        <!-- CARD 2 — Grupo de Oração -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="6dp">
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#E5E7EB">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="52dp"
+                    android:layout_height="56dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_badge_teal"
+                    android:layout_marginEnd="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="23"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#085041"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MAR"
+                        android:textSize="10sp"
+                        android:textColor="#0F6E56"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Catequese Infantil"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Data: 24 Março 2026"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Oração"
+                        android:textSize="11sp"
+                        android:textColor="#0F6E56"
+                        android:background="@drawable/bg_pill_teal"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:layout_marginBottom="5dp"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Hora: 18:00"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Grupo de Oração"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#1C1C1E"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Encontro semanal da catequese."/>
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20:00 · Momento de oração e partilha"
+                        android:textSize="12sp"
+                        android:textColor="#6B7280"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+                </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- CARD 4 -->
+        <!-- CARD 3 — Catequese Infantil -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="6dp">
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#E5E7EB">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical">
 
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Noite de Louvor" android:textSize="18sp" android:textStyle="bold"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Data: 25 Março 2026"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Hora: 21:00"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Momento de música e adoração."/>
+                <LinearLayout
+                    android:layout_width="52dp"
+                    android:layout_height="56dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_badge_amber"
+                    android:layout_marginEnd="14dp">
 
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="24"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#633806"/>
 
-        <!-- CARD 5 -->
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="6dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MAR"
+                        android:textSize="10sp"
+                        android:textColor="#854F0B"/>
+                </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Estudo Bíblico" android:textSize="18sp" android:textStyle="bold"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Data: 26 Março 2026"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Hora: 19:30"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Reflexão e estudo da Bíblia."/>
-
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- CARD 6 -->
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="6dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Reunião de Jovens" android:textSize="18sp" android:textStyle="bold"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Data: 27 Março 2026"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Hora: 20:30"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Encontro e partilha entre jovens."/>
-
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- CARD 7 -->
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="6dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Adoração ao Santíssimo" android:textSize="18sp" android:textStyle="bold"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Data: 28 Março 2026"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Hora: 18:30"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Momento de oração e silêncio."/>
-
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- CARD 8 -->
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="6dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ensaio do Coro" android:textSize="18sp" android:textStyle="bold"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Data: 29 Março 2026"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Hora: 19:00"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Preparação musical para a missa."/>
-
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- CARD 9 -->
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="6dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ação Solidária" android:textSize="18sp" android:textStyle="bold"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Data: 30 Março 2026"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Hora: 15:00"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Distribuição de alimentos a famílias."/>
-
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- CARD 10 -->
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="6dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Retiro Espiritual"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Data: 2 Abril 2026"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Hora: 09:00"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Catequese"
+                        android:textSize="11sp"
+                        android:textColor="#854F0B"
+                        android:background="@drawable/bg_pill_amber"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:layout_marginBottom="5dp"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Dia de reflexão e oração."/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Catequese Infantil"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#1C1C1E"/>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="18:00 · Encontro semanal da catequese"
+                        android:textSize="12sp"
+                        android:textColor="#6B7280"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- CARD 4 — Noite de Louvor -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#E5E7EB">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="52dp"
+                    android:layout_height="56dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_badge_pink"
+                    android:layout_marginEnd="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#72243E"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MAR"
+                        android:textSize="10sp"
+                        android:textColor="#993556"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Louvor"
+                        android:textSize="11sp"
+                        android:textColor="#993556"
+                        android:background="@drawable/bg_pill_pink"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Noite de Louvor"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#1C1C1E"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="21:00 · Música e adoração"
+                        android:textSize="12sp"
+                        android:textColor="#6B7280"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- CARD 5 — Estudo Bíblico -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#E5E7EB">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="52dp"
+                    android:layout_height="56dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_badge_blue"
+                    android:layout_marginEnd="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="26"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#0C447C"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MAR"
+                        android:textSize="10sp"
+                        android:textColor="#185FA5"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Estudo"
+                        android:textSize="11sp"
+                        android:textColor="#185FA5"
+                        android:background="@drawable/bg_pill_blue"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Estudo Bíblico"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#1C1C1E"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="19:30 · Reflexão e estudo da Bíblia"
+                        android:textSize="12sp"
+                        android:textColor="#6B7280"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- CARD 6 — Reunião de Jovens -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#E5E7EB">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="52dp"
+                    android:layout_height="56dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_badge_green"
+                    android:layout_marginEnd="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="27"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#27500A"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MAR"
+                        android:textSize="10sp"
+                        android:textColor="#3B6D11"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jovens"
+                        android:textSize="11sp"
+                        android:textColor="#3B6D11"
+                        android:background="@drawable/bg_pill_green"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reunião de Jovens"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#1C1C1E"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20:30 · Encontro e partilha entre jovens"
+                        android:textSize="12sp"
+                        android:textColor="#6B7280"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- CARD 7 — Adoração ao Santíssimo -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#E5E7EB">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="52dp"
+                    android:layout_height="56dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_badge_purple"
+                    android:layout_marginEnd="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="28"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#3C3489"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MAR"
+                        android:textSize="10sp"
+                        android:textColor="#534AB7"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Adoração"
+                        android:textSize="11sp"
+                        android:textColor="#534AB7"
+                        android:background="@drawable/bg_pill_purple"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Adoração ao Santíssimo"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#1C1C1E"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="18:30 · Momento de oração e silêncio"
+                        android:textSize="12sp"
+                        android:textColor="#6B7280"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- CARD 8 — Ensaio do Coro -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#E5E7EB">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="52dp"
+                    android:layout_height="56dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_badge_amber"
+                    android:layout_marginEnd="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="29"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#633806"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MAR"
+                        android:textSize="10sp"
+                        android:textColor="#854F0B"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Música"
+                        android:textSize="11sp"
+                        android:textColor="#854F0B"
+                        android:background="@drawable/bg_pill_amber"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ensaio do Coro"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#1C1C1E"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="19:00 · Preparação musical para a missa"
+                        android:textSize="12sp"
+                        android:textColor="#6B7280"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- CARD 9 — Ação Solidária -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#E5E7EB">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="52dp"
+                    android:layout_height="56dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_badge_coral"
+                    android:layout_marginEnd="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#712B13"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MAR"
+                        android:textSize="10sp"
+                        android:textColor="#993C1D"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Social"
+                        android:textSize="11sp"
+                        android:textColor="#993C1D"
+                        android:background="@drawable/bg_pill_coral"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ação Solidária"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#1C1C1E"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15:00 · Distribuição de alimentos a famílias"
+                        android:textSize="12sp"
+                        android:textColor="#6B7280"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- CARD 10 — Retiro Espiritual (destaque) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="#AFA9EC">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="52dp"
+                    android:layout_height="56dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_badge_purple"
+                    android:layout_marginEnd="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#3C3489"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ABR"
+                        android:textSize="10sp"
+                        android:textColor="#534AB7"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Destaque"
+                        android:textSize="11sp"
+                        android:textColor="#534AB7"
+                        android:background="@drawable/bg_pill_purple"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Retiro Espiritual"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#1C1C1E"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="09:00 · Dia de reflexão e oração"
+                        android:textSize="12sp"
+                        android:textColor="#6B7280"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+                </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
-
 </ScrollView>
