@@ -95,7 +95,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- CONTRIBUIÇÃO (OCUPA 2 COLUNAS) -->
         <androidx.cardview.widget.CardView
             android:id="@+id/card_novo"
             android:layout_width="0dp"
@@ -127,7 +126,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- ESPAÇOS (CARDS VAZIOS ALINHADOS) -->
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="150dp"
