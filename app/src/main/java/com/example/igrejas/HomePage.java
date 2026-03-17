@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class HomePage extends AppCompatActivity {
 
     CardView cardEventos;
+    CardView card_pedido_oracao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class HomePage extends AppCompatActivity {
         });
 
          cardEventos = findViewById(R.id.cardEventos);
+        card_pedido_oracao = findViewById(R.id. card_pedido_oracao);
 
          cardEventos.setOnClickListener(new View.OnClickListener() {
              @Override
@@ -35,5 +37,12 @@ public class HomePage extends AppCompatActivity {
                  startActivity(intent);
              }
          });
+        card_pedido_oracao.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(HomePage.this,Formulario_pedido_oracaoActivity.class);
+            startActivity(intent);
+        }
+    });
     }
 }

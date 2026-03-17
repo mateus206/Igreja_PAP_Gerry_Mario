@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Igrejas">
         <activity
+            android:name=".Formulario_pedido_oracaoActivity"
+            android:exported="false" />
+        <activity
             android:name=".Evento"
             android:exported="false" />
         <activity
