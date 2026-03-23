@@ -14,4 +14,12 @@
     <string name="eventos">Eventos</string>
     <string name="missa_dominical">Missa Dominical</string>
     <string name="contribuir">contribuir</string>
+    <string name="envia">Envie seu pedido de oração.vamos orar por voce!</string>
+    <string name="pediofor">Pedido de Oração</string>
+    <string name="a_o_solid_ria">Ação solidária</string>
+    <string name="apoio_social">Apoio social</string>
+    <string name="titulo">Igrejas+</string>
+    <string name="codigo_postal">Codigo Postal</string>
+    <string name="local">Local</string>
+    <string name="pedido_apoio">Envia o teu pedido de apoio e nós entraremos em contacto contigo.</string>
 </resources>

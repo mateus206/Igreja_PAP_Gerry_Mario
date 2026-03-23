@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Igrejas">
         <activity
+            android:name=".DetalheAcaoIrao"
+            android:exported="false" />
+        <activity
+            android:name=".AcaoSolidaria"
+            android:exported="false" />
+        <activity
+            android:name=".ApoioSocial"
+            android:exported="false" />
+        <activity
             android:name=".Formulario_pedido_oracaoActivity"
             android:exported="false" />
         <activity
