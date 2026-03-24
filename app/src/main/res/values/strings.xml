@@ -22,4 +22,15 @@
     <string name="codigo_postal">Codigo Postal</string>
     <string name="local">Local</string>
     <string name="pedido_apoio">Envia o teu pedido de apoio e nós entraremos em contacto contigo.</string>
+    <string-array name="tipos_oracao">
+        <item>Seleciona um tipo de pedido</item>
+        <item>Saúde</item>
+        <item>Família</item>
+        <item>Trabalho / Finanças</item>
+        <item>Relacionamentos</item>
+        <item>Fé e Crescimento Espiritual</item>
+        <item>Libertação</item>
+        <item>Luto e Consolo</item>
+        <item>Outro</item>
+    </string-array>
 </resources>

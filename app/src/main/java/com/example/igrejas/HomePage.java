@@ -29,9 +29,10 @@ public class HomePage extends AppCompatActivity {
             return insets;
         });
 
-         cardEventos = findViewById(R.id.cardEventos);
-         card_pedido_oracao = findViewById(R.id. card_pedido_oracao);
-         cardAcaoSoild = findViewById(R.id.cardAcoaSolid);
+        cardEventos = findViewById(R.id.cardEventos);
+        card_pedido_oracao = findViewById(R.id.card_pedido_oracao);
+        cardAcaoSoild = findViewById(R.id.cardAcoaSolid);
+        cardApoio = findViewById(R.id.cardApoio); // ← adicionar aqui
 
          cardEventos.setOnClickListener(new View.OnClickListener() {
              @Override
