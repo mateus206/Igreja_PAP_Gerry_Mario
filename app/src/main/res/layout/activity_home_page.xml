@@ -120,7 +120,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_novo"
+            android:id="@+id/cardAcoaSolid"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnSpan="1"
@@ -151,7 +151,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_apoio"
+            android:id="@+id/cardApoio"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnSpan="1"

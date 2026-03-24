@@ -27,8 +27,6 @@ public class Formulario_pedido_oracaoActivity extends AppCompatActivity {
         editName = findViewById(R.id.editName);
         editContacto = findViewById(R.id.editcontacto);
         editDetails = findViewById(R.id.editDetails);
-        spinnerType = findViewById(R.id.spinnerType);
-        checkAnonymous = findViewById(R.id.checkAnonymous);
         buttonEnviar = findViewById(R.id.buttonenviar);
 
         // Configurar Spinner

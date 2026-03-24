@@ -15,6 +15,8 @@ public class HomePage extends AppCompatActivity {
 
     CardView cardEventos;
     CardView card_pedido_oracao;
+    CardView cardAcaoSoild;
+    CardView cardApoio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +30,8 @@ public class HomePage extends AppCompatActivity {
         });
 
          cardEventos = findViewById(R.id.cardEventos);
-        card_pedido_oracao = findViewById(R.id. card_pedido_oracao);
+         card_pedido_oracao = findViewById(R.id. card_pedido_oracao);
+         cardAcaoSoild = findViewById(R.id.cardAcoaSolid);
 
          cardEventos.setOnClickListener(new View.OnClickListener() {
              @Override
@@ -37,12 +40,29 @@ public class HomePage extends AppCompatActivity {
                  startActivity(intent);
              }
          });
+
         card_pedido_oracao.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(HomePage.this,Formulario_pedido_oracaoActivity.class);
             startActivity(intent);
         }
-    });
+        });
+
+        cardAcaoSoild.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomePage.this,AcaoSolidaria.class);
+                startActivity(intent);
+            }
+        });
+
+        cardApoio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomePage.this,ApoioSocial.class);
+                startActivity(intent);
+            }
+        });
     }
 }
