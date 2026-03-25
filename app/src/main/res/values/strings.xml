@@ -22,6 +22,8 @@
     <string name="codigo_postal">Codigo Postal</string>
     <string name="local">Local</string>
     <string name="pedido_apoio">Envia o teu pedido de apoio e nós entraremos em contacto contigo.</string>
+    <string name="como_ajudar">• Doação de bens alimentares (entrega na sede da igreja)\n\n• Contribuição monetária através do IBAN da igreja\n\n• Voluntariado para recolha e preparação de kits de ajuda\n\n• Oração e divulgação da ação junto da comunidade</string>
+    <string name="descricao_acao_irao">O povo do Irão enfrenta uma crise humanitária grave causada pelo conflito armado. Muitas famílias perderam as suas casas, acesso a alimentos e cuidados médicos básicos.\n\nA nossa igreja está a coordenar esforços para enviar apoio direto às comunidades mais afetadas. Cada contribuição faz a diferença na vida de quem sofre.</string>
     <string-array name="tipos_oracao">
         <item>Seleciona um tipo de pedido</item>
         <item>Saúde</item>
