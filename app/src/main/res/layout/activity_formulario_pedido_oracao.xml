@@ -46,15 +46,7 @@
                 android:gravity="center_horizontal"
                 android:paddingBottom="16dp" />
 
-            <!-- Nome -->
-            <EditText
-                android:id="@+id/editName"
-                android:hint="Escreva o seu nome aqui "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edittext_bg"
-                android:padding="12dp"
-                android:layout_marginTop="8dp"/>
+
             <EditText
                 android:id="@+id/editcontacto"
                 android:hint="Escreva o seu email ou contacto "
