@@ -3,13 +3,16 @@ package com.example.igrejas;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
+import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 public class HomePage extends AppCompatActivity {
 
@@ -17,6 +20,9 @@ public class HomePage extends AppCompatActivity {
     CardView card_pedido_oracao;
     CardView cardAcaoSoild;
     CardView cardApoio;
+    ImageButton menuBtn;
+
+    DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +38,18 @@ public class HomePage extends AppCompatActivity {
         cardEventos = findViewById(R.id.cardEventos);
         card_pedido_oracao = findViewById(R.id.card_pedido_oracao);
         cardAcaoSoild = findViewById(R.id.cardAcoaSolid);
-        cardApoio = findViewById(R.id.cardApoio); // ← adicionar aqui
+        cardApoio = findViewById(R.id.cardApoio);
+        menuBtn = findViewById(R.id.menuBtn);
+        drawerLayout = findViewById(R.id.main);
 
-         cardEventos.setOnClickListener(new View.OnClickListener() {
+        menuBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(GravityCompat.START); // ← abre o menu
+            }
+        });
+
+        cardEventos.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
                  Intent intent = new Intent(HomePage.this, Evento.class);
