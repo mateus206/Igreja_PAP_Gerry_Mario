@@ -1,5 +1,6 @@
 package com.example.igrejas;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -13,28 +14,30 @@ import java.util.ArrayList;
 
 public class UserAdapter extends  RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
-    ArrayList<User> infoUser;
+    ArrayList<User> listaUser;
 
-    public UserAdapter(ArrayList<User> infoUser) {
-        this.infoUser = infoUser;
+    public UserAdapter(ArrayList<User> listaUser) {
+        this.listaUser = listaUser;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_info_user, parent, false);
+
+        return  new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        User user = this.infoUser.get(position);
+        User user = this.listaUser.get(position);
 
         holder.tvNomeUser.setText(user.getNome());
         holder.tvEmailUser.setText(user.getEmail());
     }
 
     @Override
-    public int getItemCount() { return this.infoUser.size(); }
+    public int getItemCount() { return this.listaUser.size(); }
 
     class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvNomeUser;
@@ -43,8 +46,8 @@ public class UserAdapter extends  RecyclerView.Adapter<UserAdapter.ViewHolder> {
         ViewHolder(View itemView) {
             super(itemView);
 
-            //tvNomeUser = itemView.findViewById(R.id.tvNomeUser);
-            //tvEmailUser = itemView.findViewById(R.id.tvEmailUser);
+            tvNomeUser = itemView.findViewById(R.id.tvNomeUser);
+            tvEmailUser = itemView.findViewById(R.id.tvEmailUser);
         }
 
     }

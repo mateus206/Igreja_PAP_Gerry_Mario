@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="180dp"
@@ -14,6 +15,16 @@
         android:id="@+id/imgPerfil"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:src="@drawable/outline_article_person_24"/>
+        android:src="@drawable/outline_article_person_24"
+        android:padding="10dp"
+        android:scaleType="centerCrop" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgPerfil" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,10 +2,12 @@ package com.example.igrejas;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
@@ -13,6 +15,14 @@ import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.igrejas.models.PedidoOracoes;
+import com.example.igrejas.models.User;
+import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 public class HomePage extends AppCompatActivity {
 
@@ -21,8 +31,9 @@ public class HomePage extends AppCompatActivity {
     CardView cardAcaoSoild;
     CardView cardApoio;
     ImageButton menuBtn;
-
+    NavigationView navigationView;
     DrawerLayout drawerLayout;
+    ArrayList<User> listaUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +52,18 @@ public class HomePage extends AppCompatActivity {
         cardApoio = findViewById(R.id.cardApoio);
         menuBtn = findViewById(R.id.menuBtn);
         drawerLayout = findViewById(R.id.main);
+        navigationView = findViewById(R.id.navigationView);
+
+        View headerView = this.navigationView.getHeaderView(0);
+
+        RecyclerView recyclerView = headerView.findViewById(R.id.recyclerViewUser);
+
+
+        this.buildUser();
+
+        UserAdapter userAdapter = new UserAdapter(listaUser);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(userAdapter);
 
         menuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,5 +103,34 @@ public class HomePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        this.navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+
+                if (id == R.id.nav_eventos) {
+                    startActivity(new Intent(HomePage.this, Evento.class));
+                }else if (id == R.id.nav_pedir_oracao) {
+                    startActivity(new Intent(HomePage.this, PedidoOracoes.class));
+                }else if (id == R.id.nav_acao_solidaria) {
+                    startActivity(new Intent(HomePage.this, AcaoSolidaria.class));
+                }else if (id == R.id.nav_apoio_social) {
+                    startActivity(new Intent(HomePage.this, ApoioSocial.class));
+                }
+
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            }
+        });
+    }
+
+    public void buildUser() {
+
+        User u1 = new User(1, "Mateus", "mathues@gmail.com", "12345");
+
+        this.listaUser = new ArrayList<>();
+
+        this.listaUser.add(u1);
     }
 }
