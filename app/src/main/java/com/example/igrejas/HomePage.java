@@ -127,7 +127,7 @@ public class HomePage extends AppCompatActivity {
 
     public void buildUser() {
 
-        User u1 = new User(1, "Mateus", "mathues@gmail.com", "12345");
+        User u1 = new User(1, false, "mateus", "12345", "mateus@gmail.com", "2008-1-4", "ew", "123", false);
 
         this.listaUser = new ArrayList<>();
 
