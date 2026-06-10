@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <!-- Logo da Igreja -->
+        <!-- Logo da Igrejaaaaa -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardLogo"
             android:layout_width="64dp"
