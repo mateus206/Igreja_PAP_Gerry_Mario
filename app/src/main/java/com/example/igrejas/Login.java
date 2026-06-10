@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.igrejas.models.User;
 import com.example.igrejas.models.loginresponse.LoginResponse;
 import com.example.igrejas.models.utils.ApiConfig;
 import com.google.gson.Gson;
@@ -37,7 +39,7 @@ public class Login extends AppCompatActivity {
 
     EditText editTextPassword;
 
-    EditText txtResposta;
+    TextView txtResposta;
 
     private final OkHttpClient client = new OkHttpClient();
     private final Gson gson = new Gson();
@@ -141,12 +143,12 @@ public class Login extends AppCompatActivity {
                             User user = loginResponse.getData().getUser();
 
                             editor.putInt("id", user.getId());
-                            editor.putBoolean("is_admin", user.isAdmin());
+                            editor.putBoolean("is_admin", user.getIsAdmin());
                             editor.putString("name_user", user.getNome());
-                            editor.putString("email", user.getEmail());
                             editor.putString("telefone", user.getTelefone());
-                            editor.putString("estado", user.getEstado());
+                            editor.putString("email", user.getEmail());
                             editor.putString("data_registro", user.getDataRegistro());
+                            editor.putString("estado", user.getEstado());
                             editor.putString("password", user.getPassword());
                             editor.putBoolean("is_verified", user.isVerified());
 
@@ -154,7 +156,7 @@ public class Login extends AppCompatActivity {
                             Toast.makeText(Login.this,
                                     "Login com sucesso", Toast.LENGTH_SHORT).show();
 
-                            Intent intent = new Intent(Login.this, ListaPaciente.class);
+                            Intent intent = new Intent(Login.this, HomePage.class);
                             startActivity(intent);
                             finish();
 
