@@ -1,5 +1,6 @@
 package com.example.igrejas;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,15 +9,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.igrejas.models.Eventos;
+import com.example.igrejas.models.AcaoSolidarias;
 
 import java.util.ArrayList;
 
-public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHolder> {
+public class AcoesSolidariasAdapter extends RecyclerView.Adapter<AcoesSolidariasAdapter.ViewHolder> {
 
-    ArrayList<Eventos> lista;
+    ArrayList<AcaoSolidarias> lista;
 
-    public EventosAdapter(ArrayList<Eventos> lista) {
+    public AcoesSolidariasAdapter(ArrayList<AcaoSolidarias> lista) {
         this.lista = lista;
     }
 
@@ -24,19 +25,23 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_evento, parent, false);
+                .inflate(R.layout.item_acao_solidaria, parent, false);
 
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Eventos evento = this.lista.get(position);
+        AcaoSolidarias acao = this.lista.get(position);
 
-        holder.tvTitulo.setText(texto(evento.getTitulo(), "Evento"));
-        holder.tvTipo.setText(texto(evento.getTipo(), "Tipo não definido"));
-        holder.tvLocal.setText(texto(evento.getLocal(), "Igreja"));
-        holder.tvDataHora.setText("Data inicio: " + texto(evento.getDataHora(), "Sem data"));
+        holder.tvTitulo.setText(texto(acao.getNomeAcao(), "Ação solidária"));
+        holder.tvDataHora.setText("Data inicio: " + texto(acao.getDataHoraInicio(), "Sem data"));
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), DetalheAcaoIrao.class);
+            intent.putExtra("acao_id", acao.getId());
+            v.getContext().startActivity(intent);
+        });
     }
 
     @Override
@@ -54,17 +59,13 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
     class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvTitulo;
-        TextView tvTipo;
-        TextView tvLocal;
         TextView tvDataHora;
 
         ViewHolder(View itemView) {
             super(itemView);
 
-            tvTitulo = itemView.findViewById(R.id.tvTitulo);
-            tvTipo = itemView.findViewById(R.id.tvTipo);
-            tvLocal = itemView.findViewById(R.id.tvLocal);
-            tvDataHora = itemView.findViewById(R.id.tvDataHora);
+            tvTitulo = itemView.findViewById(R.id.tvTituloAcao);
+            tvDataHora = itemView.findViewById(R.id.tvDataHoraAcao);
         }
     }
 }

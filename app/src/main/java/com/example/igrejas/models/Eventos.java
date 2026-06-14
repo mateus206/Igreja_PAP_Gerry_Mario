@@ -1,65 +1,64 @@
 package com.example.igrejas.models;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.Date;
+import com.google.gson.annotations.SerializedName;
 
 public class Eventos {
-    private String titulo;
+    private int id;
 
-    private String tipo;
+    @SerializedName("id_users")
+    private int idUsers;
+
+    @SerializedName("data_hora_inicio")
+    private String dataHoraInicio;
+
+    @SerializedName("nome_evento")
+    private String nomeEvento;
+
+    @SerializedName("tipo_evento")
+    private String tipoEvento;
+
     private String local;
-    private String dataHora;
 
-
-
-    public  Eventos (String titulo, String tipo, String local, String dataHora){
-        this.titulo = titulo;
-        this.dataHora = dataHora;
-        this.tipo=tipo;
-        this.local=local;
+    public Eventos(String titulo, String tipo, String local, String dataHora) {
+        this.nomeEvento = titulo;
+        this.tipoEvento = tipo;
+        this.local = local;
+        this.dataHoraInicio = dataHora;
     }
 
-    public String getTitulo() {
-        return titulo;
+    public int getId() {
+        return id;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public int getIdUsers() {
+        return idUsers;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getDataHoraInicio() {
+        return dataHoraInicio;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public String getNomeEvento() {
+        return nomeEvento;
+    }
+
+    public String getTipoEvento() {
+        return tipoEvento;
     }
 
     public String getLocal() {
         return local;
     }
 
-    public void setLocal(String local) {
-        this.local = local;
+    public String getTitulo() {
+        return nomeEvento;
+    }
+
+    public String getTipo() {
+        return tipoEvento;
     }
 
     public String getDataHora() {
-        return dataHora;
-    }
-
-    public void setDataHora(String dataHora) {
-        this.dataHora = dataHora;
-    }
-
-    @Override
-    public String toString() {
-        return "Eventos{" +
-                "titulo='" + titulo + '\'' +
-                ", tipo='" + tipo + '\'' +
-                ", local='" + local + '\'' +
-                ", dataHora='" + dataHora + '\'' +
-                '}';
+        return dataHoraInicio;
     }
 }
-

@@ -35,4 +35,6 @@
         <item>Luto e Consolo</item>
         <item>Outro</item>
     </string-array>
+    <string name="alterar_password">Alterar password</string>
+    <string name="editar_perfil">Editar perfil</string>
 </resources>

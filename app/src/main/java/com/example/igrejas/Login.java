@@ -135,7 +135,7 @@ public class Login extends AppCompatActivity {
                                 && loginResponse.getData().getUser() != null) {
 
                             SharedPreferences prefs =
-                                    getSharedPreferences("screenAlert", MODE_PRIVATE);
+                                    getSharedPreferences("app_session", MODE_PRIVATE);
                             SharedPreferences.Editor editor = prefs.edit();
 
                             editor.putString("jwt", loginResponse.getData().getJwt());
@@ -144,7 +144,7 @@ public class Login extends AppCompatActivity {
 
                             editor.putInt("id", user.getId());
                             editor.putBoolean("is_admin", user.getIsAdmin());
-                            editor.putString("name_user", user.getNome());
+                            editor.putString("nome", user.getNome());
                             editor.putString("telefone", user.getTelefone());
                             editor.putString("email", user.getEmail());
                             editor.putString("data_registro", user.getDataRegistro());

@@ -1,6 +1,7 @@
 package com.example.igrejas;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,7 +19,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.igrejas.models.PedidoOracoes;
 import com.example.igrejas.models.User;
 import com.google.android.material.navigation.NavigationView;
 
@@ -30,6 +30,8 @@ public class HomePage extends AppCompatActivity {
     CardView card_pedido_oracao;
     CardView cardAcaoSoild;
     CardView cardApoio;
+    CardView cardUpdatePassword;
+    CardView cardEditProfile;
     ImageButton menuBtn;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
@@ -50,14 +52,14 @@ public class HomePage extends AppCompatActivity {
         card_pedido_oracao = findViewById(R.id.card_pedido_oracao);
         cardAcaoSoild = findViewById(R.id.cardAcoaSolid);
         cardApoio = findViewById(R.id.cardApoio);
+        cardUpdatePassword = findViewById(R.id.cardUpdatePassword);
+        cardEditProfile = findViewById(R.id.cardEditProfile);
         menuBtn = findViewById(R.id.menuBtn);
         drawerLayout = findViewById(R.id.main);
         navigationView = findViewById(R.id.navigationView);
 
         View headerView = this.navigationView.getHeaderView(0);
-
         RecyclerView recyclerView = headerView.findViewById(R.id.recyclerViewUser);
-
 
         this.buildUser();
 
@@ -68,30 +70,30 @@ public class HomePage extends AppCompatActivity {
         menuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                drawerLayout.openDrawer(GravityCompat.START); // ← abre o menu
+                drawerLayout.openDrawer(GravityCompat.START);
             }
         });
 
         cardEventos.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 Intent intent = new Intent(HomePage.this, Evento.class);
-                 startActivity(intent);
-             }
-         });
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomePage.this, Evento.class);
+                startActivity(intent);
+            }
+        });
 
         card_pedido_oracao.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent(HomePage.this,Formulario_pedido_oracaoActivity.class);
-            startActivity(intent);
-        }
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomePage.this, Formulario_pedido_oracaoActivity.class);
+                startActivity(intent);
+            }
         });
 
         cardAcaoSoild.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePage.this,AcaoSolidaria.class);
+                Intent intent = new Intent(HomePage.this, AcaoSolidaria.class);
                 startActivity(intent);
             }
         });
@@ -99,7 +101,24 @@ public class HomePage extends AppCompatActivity {
         cardApoio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePage.this,ApoioSocial.class);
+                Intent intent = new Intent(HomePage.this, ApoioSocial.class);
+                startActivity(intent);
+            }
+        });
+
+
+        cardEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomePage.this, EditProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        cardUpdatePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomePage.this, UpdatePasswordActivity.class);
                 startActivity(intent);
             }
         });
@@ -111,12 +130,16 @@ public class HomePage extends AppCompatActivity {
 
                 if (id == R.id.nav_eventos) {
                     startActivity(new Intent(HomePage.this, Evento.class));
-                }else if (id == R.id.nav_pedir_oracao) {
-                    startActivity(new Intent(HomePage.this, PedidoOracoes.class));
-                }else if (id == R.id.nav_acao_solidaria) {
+                } else if (id == R.id.nav_pedir_oracao) {
+                    startActivity(new Intent(HomePage.this, Formulario_pedido_oracaoActivity.class));
+                } else if (id == R.id.nav_acao_solidaria) {
                     startActivity(new Intent(HomePage.this, AcaoSolidaria.class));
-                }else if (id == R.id.nav_apoio_social) {
+                } else if (id == R.id.nav_apoio_social) {
                     startActivity(new Intent(HomePage.this, ApoioSocial.class));
+                } else if (id == R.id.nav_edit_profile) {
+                    startActivity(new Intent(HomePage.this, EditProfileActivity.class));
+                } else if (id == R.id.nav_update_password) {
+                    startActivity(new Intent(HomePage.this, UpdatePasswordActivity.class));
                 }
 
                 drawerLayout.closeDrawer(GravityCompat.START);
@@ -126,11 +149,21 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void buildUser() {
+        SharedPreferences prefs = getSharedPreferences("app_session", MODE_PRIVATE);
 
-        User u1 = new User(1, false, "mateus", "12345", "mateus@gmail.com", "2008-1-4", "ew", "123", false);
+        int id = prefs.getInt("id", 0);
+        boolean isAdmin = prefs.getBoolean("is_admin", false);
+        String nome = prefs.getString("nome", "Utilizador");
+        String telefone = prefs.getString("telefone", "");
+        String email = prefs.getString("email", "");
+        String dataRegistro = prefs.getString("data_registro", "");
+        String estado = prefs.getString("estado", "");
+        String password = prefs.getString("password", "");
+        boolean isVerified = prefs.getBoolean("is_verified", false);
+
+        User u1 = new User(id, isAdmin, nome, telefone, email, dataRegistro, estado, password, isVerified);
 
         this.listaUser = new ArrayList<>();
-
         this.listaUser.add(u1);
     }
 }

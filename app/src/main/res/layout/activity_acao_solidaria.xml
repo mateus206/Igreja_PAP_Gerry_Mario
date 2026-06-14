@@ -6,15 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/baby_blue"
+    android:padding="20dp"
     tools:context=".AcaoSolidaria">
-
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
         app:cardBackgroundColor="#33FFFFFF"
         app:cardCornerRadius="18dp"
         app:cardElevation="0dp"
@@ -31,153 +30,41 @@
             android:src="@drawable/logoigreja" />
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardIrao"
+    <TextView
+        android:id="@+id/tvTituloPagina"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:cardBackgroundColor="#26FFFFFF"
-        app:cardCornerRadius="16dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp"
-        app:cardElevation="0dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="Ações Solidárias"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="14dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tvDataHora"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Data inicio: 23/3/2026"
-                    android:textColor="#99FFFFFF"
-                    android:textSize="11sp" />
-
-                <TextView
-                    android:id="@+id/tvTitulo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:text="Ajudar pessoas de Irão"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-
-            </LinearLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardAlimentacao"
+    <TextView
+        android:id="@+id/tvSubtituloPagina"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:cardBackgroundColor="#26FFFFFF"
-        app:cardCornerRadius="16dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp"
-        app:cardElevation="0dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="Todas as ações solidárias"
+        android:textColor="#BDFFFFFF"
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardIrao">
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloPagina" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="14dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textdata"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Data inicio: 12/6/2012"
-                    android:textColor="#99FFFFFF"
-                    android:textSize="11sp" />
-
-                <TextView
-                    android:id="@+id/text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:text="Ajudar pessoas com alimentação"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-
-            </LinearLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewAcoesSolidarias"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:cardBackgroundColor="#26FFFFFF"
-        app:cardCornerRadius="16dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp"
-        app:cardElevation="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardAlimentacao">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="14dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textdata2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Data inicio: 26/03/2026"
-                    android:textColor="#99FFFFFF"
-                    android:textSize="11sp" />
-
-                <TextView
-                    android:id="@+id/text3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:text="Ajudar pessoas com roupas"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-
-            </LinearLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toBottomOf="@+id/tvSubtituloPagina" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

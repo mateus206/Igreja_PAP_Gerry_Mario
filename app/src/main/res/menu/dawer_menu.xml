@@ -21,6 +21,14 @@
                     android:icon="@drawable/apoiosocial"
                     android:title="Apoio Social"/>
 
+    <item
+        android:id="@+id/nav_edit_profile"
+        android:icon="@drawable/outline_article_person_24"
+        android:title="Editar Perfil"/>
 
+    <item
+        android:id="@+id/nav_update_password"
+        android:icon="@drawable/outline_article_person_24"
+        android:title="Alterar Password"/>
 
 </menu>
