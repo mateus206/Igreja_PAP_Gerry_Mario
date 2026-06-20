@@ -1,5 +1,7 @@
 package com.example.igrejas;
 
+// Comentários adicionados como aluno para explicar melhor o código.
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -27,6 +29,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
+// esta activity trata da alteração da password do utilizador
 public class UpdatePasswordActivity extends AppCompatActivity {
 
     private EditText etCurrentPassword;
@@ -37,23 +40,29 @@ public class UpdatePasswordActivity extends AppCompatActivity {
     private final Gson gson = new Gson();
 
     @Override
+    // aqui começa o ecrã e faço a ligação entre o XML e o Java
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+        // escolho o layout que vai aparecer neste ecrã
         setContentView(R.layout.activity_update_password);
+        // isto ajuda o layout a não ficar por baixo das barras do sistema
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
+        // vou buscar os componentes que estão no ficheiro XML
         etCurrentPassword = findViewById(R.id.etCurrentPassword);
         etNewPassword = findViewById(R.id.etNewPassword);
         btnUpdatePassword = findViewById(R.id.btnUpdatePassword);
 
+        // aqui defino o que acontece quando o utilizador carrega
         btnUpdatePassword.setOnClickListener(v -> atualizarPassword());
     }
 
+    // função que valida e envia a nova password para o servidor
     private void atualizarPassword() {
         String currentPassword = etCurrentPassword.getText().toString().trim();
         String newPassword = etNewPassword.getText().toString().trim();
@@ -76,6 +85,7 @@ public class UpdatePasswordActivity extends AppCompatActivity {
             return;
         }
 
+        // guardo ou leio dados da sessão do utilizador
         SharedPreferences prefs = getSharedPreferences("app_session", MODE_PRIVATE);
         String jwt = prefs.getString("jwt", null);
 
@@ -84,20 +94,24 @@ public class UpdatePasswordActivity extends AppCompatActivity {
             return;
         }
 
+        // preparo os dados que vão ser enviados no pedido
         RequestBody formBody = new FormBody.Builder()
                 .add("current_password", currentPassword)
                 .add("new_password", newPassword)
                 .build();
 
+        // crio o pedido para mandar para o servidor
         Request request = new Request.Builder()
                 .url(ApiConfig.UPDATE_PASSWORD_URL)
                 .post(formBody)
                 .addHeader("Authorization", "Bearer " + jwt)
                 .build();
 
+        // faço a chamada à API em segundo plano para não bloquear a app
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
+                // volto para a interface porque a resposta vem noutra thread
                 runOnUiThread(() ->
                         Toast.makeText(UpdatePasswordActivity.this, "Erro: " + e.getMessage(), Toast.LENGTH_LONG).show()
                 );

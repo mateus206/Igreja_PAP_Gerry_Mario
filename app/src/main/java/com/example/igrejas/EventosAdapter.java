@@ -1,5 +1,7 @@
 package com.example.igrejas;
 
+// Comentários adicionados como aluno para explicar melhor o código.
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import com.example.igrejas.models.Eventos;
 
 import java.util.ArrayList;
 
+// este adapter liga cada evento ao RecyclerView
 public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHolder> {
 
     ArrayList<Eventos> lista;
@@ -22,6 +25,7 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
 
     @NonNull
     @Override
+    // aqui é criado o layout de cada item da lista
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_evento, parent, false);
@@ -30,6 +34,7 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
     }
 
     @Override
+    // aqui coloco os dados dentro de cada item da lista
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Eventos evento = this.lista.get(position);
 
@@ -40,6 +45,7 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
     }
 
     @Override
+    // devolve quantos elementos existem para o RecyclerView mostrar
     public int getItemCount() {
         return this.lista.size();
     }

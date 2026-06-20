@@ -1,6 +1,10 @@
 package com.example.igrejas.models.eventosresponse;
 
+// Comentários adicionados como aluno para explicar melhor o código.
+
+// resposta da API para a lista de eventos
 public class EventosResponse {
+    // campos que guardam os dados deste objeto
     private boolean success;
     private String message;
     private EventosData data;
@@ -9,6 +13,7 @@ public class EventosResponse {
         return success;
     }
 
+    // método para devolver um valor guardado
     public String getMessage() {
         return message;
     }

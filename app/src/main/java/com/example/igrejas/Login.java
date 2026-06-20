@@ -1,5 +1,7 @@
 package com.example.igrejas;
 
+// Comentários adicionados como aluno para explicar melhor o código.
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -30,6 +32,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
+// esta activity é a parte do login, onde o utilizador entra na aplicação
 public class Login extends AppCompatActivity {
 
     Button btnSignIn;
@@ -41,20 +44,24 @@ public class Login extends AppCompatActivity {
 
     TextView txtResposta;
 
-    private final OkHttpClient client = new OkHttpClient();
+   OkHttpClient client = new OkHttpClient();
     private final Gson gson = new Gson();
 
     @Override
+    // aqui começa o ecrã e faço a ligação entre o XML e o Java
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+        // escolho o layout que vai aparecer neste ecrã
         setContentView(R.layout.activity_login);
+        // isto ajuda o layout a não ficar por baixo das barras do sistema
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
+        // vou buscar os componentes que estão no ficheiro XML
         btnSignIn = findViewById(R.id.buttonLogin);
         registar = findViewById(R.id.textViewRegistarTe);
 
@@ -62,6 +69,7 @@ public class Login extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editTextPassword);
         txtResposta = findViewById(R.id.txtResposta);
 
+        // aqui defino o que acontece quando o utilizador carrega
         this.btnSignIn.setOnClickListener(v -> fazerLogin());
 
         this.registar.setOnClickListener(v -> {
@@ -70,6 +78,7 @@ public class Login extends AppCompatActivity {
         });
     }
 
+    // função que valida os campos e tenta fazer o login na API
     private void fazerLogin() {
         String email    = editTextEmailAddress.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
@@ -84,20 +93,26 @@ public class Login extends AppCompatActivity {
             return;
         }
 
+        OkHttpClient client = new OkHttpClient();
+
+        // preparo os dados que vão ser enviados no pedido
         RequestBody formBody = new FormBody.Builder()
                 .add("email", email)
                 .add("password", password)
                 .build();
 
+        // crio o pedido para mandar para o servidor
         Request request = new Request.Builder()
                 .url(ApiConfig.LOGINURL)
                 .post(formBody)
                 .build();
 
+        // faço a chamada à API em segundo plano para não bloquear a app
         client.newCall(request).enqueue(new Callback() {
 
             @Override
             public void onFailure(Call call, IOException e) {
+                // volto para a interface porque a resposta vem noutra thread
                 runOnUiThread(() ->
                         txtResposta.setText("Erro de ligação: " + e.getMessage())
                 );
@@ -134,6 +149,7 @@ public class Login extends AppCompatActivity {
                                 && loginResponse.getData() != null
                                 && loginResponse.getData().getUser() != null) {
 
+                            // guardo ou leio dados da sessão do utilizador
                             SharedPreferences prefs =
                                     getSharedPreferences("app_session", MODE_PRIVATE);
                             SharedPreferences.Editor editor = prefs.edit();

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/baby_blue"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Servir num Ministério"
+            android:textColor="@color/blue_light"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Escolhe onde gostarias de servir na igreja."
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/spinnerMinisterio"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="24dp"
+            android:entries="@array/ministerios" />
+
+        <EditText
+            android:id="@+id/editExperienciaMinisterio"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_bg"
+            android:gravity="top"
+            android:hint="Tens alguma experiência?"
+            android:padding="12dp" />
+
+        <EditText
+            android:id="@+id/editDisponibilidadeMinisterio"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_bg"
+            android:hint="Disponibilidade"
+            android:padding="12dp" />
+
+        <EditText
+            android:id="@+id/editMensagemMinisterio"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_bg"
+            android:gravity="top"
+            android:hint="Mensagem / motivação"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/buttonEnviarMinisterio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Enviar inscrição" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/baby_blue"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dízimos e Ofertas"
+            android:textColor="@color/blue_light"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Regista a tua contribuição. O administrador confirma depois no site."
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/spinnerTipoContribuicao"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="24dp"
+            android:entries="@array/tipos_contribuicao" />
+
+        <EditText
+            android:id="@+id/editValorContribuicao"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_bg"
+            android:hint="Valor"
+            android:inputType="numberDecimal"
+            android:padding="12dp" />
+
+        <Spinner
+            android:id="@+id/spinnerMetodoPagamento"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
+            android:entries="@array/metodos_pagamento" />
+
+        <EditText
+            android:id="@+id/editObservacaoContribuicao"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_bg"
+            android:gravity="top"
+            android:hint="Observação opcional"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/buttonEnviarContribuicao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Enviar contribuição" />
+    </LinearLayout>
+</ScrollView>

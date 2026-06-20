@@ -37,4 +37,35 @@
     </string-array>
     <string name="alterar_password">Alterar password</string>
     <string name="editar_perfil">Editar perfil</string>
+
+    <string name="notificacoes">Notificações</string>
+    <string name="dizimos_ofertas">Dízimos e Ofertas</string>
+    <string name="servir_ministerio">Servir Ministério</string>
+    <string-array name="tipos_contribuicao">
+        <item>Seleciona o tipo</item>
+        <item>Dízimo</item>
+        <item>Oferta</item>
+        <item>Missões</item>
+        <item>Construção</item>
+        <item>Outro</item>
+    </string-array>
+    <string-array name="metodos_pagamento">
+        <item>Seleciona o método</item>
+        <item>MB Way</item>
+        <item>Transferência</item>
+        <item>Numerário</item>
+        <item>Outro</item>
+    </string-array>
+    <string-array name="ministerios">
+        <item>Seleciona o ministério</item>
+        <item>Louvor</item>
+        <item>Intercessão</item>
+        <item>Multimédia</item>
+        <item>Receção</item>
+        <item>Crianças</item>
+        <item>Jovens</item>
+        <item>Ação Social</item>
+        <item>Evangelismo</item>
+        <item>Outro</item>
+    </string-array>
 </resources>

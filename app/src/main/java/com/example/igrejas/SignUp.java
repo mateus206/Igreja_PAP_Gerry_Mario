@@ -1,5 +1,7 @@
 package com.example.igrejas;
 
+// Comentários adicionados como aluno para explicar melhor o código.
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -28,6 +30,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
+// esta activity é para criar uma conta nova no sistema
 public class SignUp extends AppCompatActivity {
 
     EditText editTextUserName, editTextEmailAddress, editTextNumber, editTextPass;
@@ -38,16 +41,20 @@ public class SignUp extends AppCompatActivity {
     private final OkHttpClient client = new OkHttpClient();
     private final Gson gson = new Gson();
     @Override
+    // aqui começa o ecrã e faço a ligação entre o XML e o Java
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+        // escolho o layout que vai aparecer neste ecrã
         setContentView(R.layout.activity_sign_up);
+        // isto ajuda o layout a não ficar por baixo das barras do sistema
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
+        // vou buscar os componentes que estão no ficheiro XML
         editTextUserName = findViewById(R.id.editTextUserName);
         editTextEmailAddress = findViewById(R.id.editTextEmailAddress);
         editTextNumber =findViewById(R.id.editTextNumber);
@@ -56,6 +63,7 @@ public class SignUp extends AppCompatActivity {
         txtRespostaSign = findViewById(R.id.txtRespostaSign);
         textJaTenho = findViewById(R.id.textViewJaTenho);
 
+        // aqui defino o que acontece quando o utilizador carrega
         btnSignUp.setOnClickListener(v -> fazerSignUp());
 
         textJaTenho.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +85,7 @@ public class SignUp extends AppCompatActivity {
             Toast.makeText(SignUp.this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
             return;
         }
+        // preparo os dados que vão ser enviados no pedido
         RequestBody formBody = new FormBody.Builder()
                 .add("nome", nome)
                 .add("email", email)
@@ -84,15 +93,18 @@ public class SignUp extends AppCompatActivity {
                 .add("password", password)
                 .build();
 
+        // crio o pedido para mandar para o servidor
         Request request = new Request.Builder()
                 .url(ApiConfig.SIGNUPURL)
                 .post(formBody)
                 .build();
 
+        // faço a chamada à API em segundo plano para não bloquear a app
         client.newCall(request).enqueue(new Callback() {
 
             @Override
             public void onFailure(Call call, IOException e) {
+                // volto para a interface porque a resposta vem noutra thread
                 runOnUiThread(() ->
                         txtRespostaSign.setText("Erro de ligação: " + e.getMessage())
                 );

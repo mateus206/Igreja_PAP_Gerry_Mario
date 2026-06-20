@@ -1,7 +1,11 @@
 package com.example.igrejas.models;
 
+// Comentários adicionados como aluno para explicar melhor o código.
+
+// modelo do apoio social, com os dados do pedido
 public class ApoioSociais {
 
+    // campos que guardam os dados deste objeto
     private int id;
     private int userId;
     private String local;
@@ -10,6 +14,7 @@ public class ApoioSociais {
     private int membrosDeFamilia;
     private String pedidoAjuda;
 
+    // construtor para criar o objeto já com valores
     public ApoioSociais(int id, int userId, String local, String codigoPostal, String telefone, int membrosDeFamilia, String pedidoAjuda) {
         this.id = id;
         this.userId = userId;
@@ -20,6 +25,7 @@ public class ApoioSociais {
         this.pedidoAjuda = pedidoAjuda;
     }
 
+    // método para devolver um valor guardado
     public int getId() {
         return id;
     }

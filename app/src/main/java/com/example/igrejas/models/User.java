@@ -1,8 +1,12 @@
 package com.example.igrejas.models;
 
+// Comentários adicionados como aluno para explicar melhor o código.
+
 import com.google.gson.annotations.SerializedName;
+// modelo do utilizador, usado para guardar os dados que vêm da API
 public class User {
 
+    // campos que guardam os dados deste objeto
     private int id;
     @SerializedName("is_admin")
     private boolean isAdmin;
@@ -17,6 +21,7 @@ public class User {
     private boolean isVerified;
 
 
+    // construtor para criar o objeto já com valores
     public User(int id, boolean isAdmin, String nome, String telefone,
                 String email, String dataRegistro, String estado,
                 String password, boolean isVerified) {
@@ -31,6 +36,7 @@ public class User {
         this.isVerified = isVerified;
     }
 
+    // método para devolver um valor guardado
     public int getId() {
         return id;
     }

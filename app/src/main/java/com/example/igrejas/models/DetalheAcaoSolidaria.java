@@ -1,11 +1,16 @@
 package com.example.igrejas.models;
 
+// Comentários adicionados como aluno para explicar melhor o código.
+
+// modelo com os detalhes de uma ação solidária
 public class DetalheAcaoSolidaria {
+    // campos que guardam os dados deste objeto
     private  int id;
     private int AcaoSolidariaId;
     private String descricao;
     private String comoAjudar;
 
+    // construtor para criar o objeto já com valores
     public DetalheAcaoSolidaria(int id, int acaoSolidariaId, String descricao, String comoAjudar) {
         this.id = id;
         AcaoSolidariaId = acaoSolidariaId;
@@ -13,6 +18,7 @@ public class DetalheAcaoSolidaria {
         this.comoAjudar = comoAjudar;
     }
 
+    // método para devolver um valor guardado
     public int getId() {
         return id;
     }

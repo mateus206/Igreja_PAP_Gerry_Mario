@@ -21,6 +21,22 @@
                     android:icon="@drawable/apoiosocial"
                     android:title="Apoio Social"/>
 
+
+    <item
+        android:id="@+id/nav_notificacoes"
+        android:icon="@drawable/outline_cheer_24"
+        android:title="Notificações"/>
+
+    <item
+        android:id="@+id/nav_contribuicao"
+        android:icon="@drawable/contribuicao"
+        android:title="Dízimos e Ofertas"/>
+
+    <item
+        android:id="@+id/nav_ministerio"
+        android:icon="@drawable/outline_article_person_24"
+        android:title="Servir Ministério"/>
+
     <item
         android:id="@+id/nav_edit_profile"
         android:icon="@drawable/outline_article_person_24"

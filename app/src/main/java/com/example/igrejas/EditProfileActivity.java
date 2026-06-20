@@ -1,5 +1,7 @@
 package com.example.igrejas;
 
+// Comentários adicionados como aluno para explicar melhor o código.
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -28,6 +30,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
+// esta activity serve para ver e alterar os dados do perfil
 public class EditProfileActivity extends AppCompatActivity {
 
     private EditText etNome;
@@ -40,21 +43,26 @@ public class EditProfileActivity extends AppCompatActivity {
     private String jwt;
 
     @Override
+    // aqui começa o ecrã e faço a ligação entre o XML e o Java
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+        // escolho o layout que vai aparecer neste ecrã
         setContentView(R.layout.activity_edit_profile);
+        // isto ajuda o layout a não ficar por baixo das barras do sistema
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
+        // vou buscar os componentes que estão no ficheiro XML
         etNome = findViewById(R.id.etNome);
         etTelefone = findViewById(R.id.etTelefone);
         etEmail = findViewById(R.id.etEmail);
         btnGuardarPerfil = findViewById(R.id.btnGuardarPerfil);
 
+        // guardo ou leio dados da sessão do utilizador
         SharedPreferences prefs = getSharedPreferences("app_session", MODE_PRIVATE);
         jwt = prefs.getString("jwt", null);
 
@@ -70,19 +78,24 @@ public class EditProfileActivity extends AppCompatActivity {
 
         carregarPerfil();
 
+        // aqui defino o que acontece quando o utilizador carrega
         btnGuardarPerfil.setOnClickListener(v -> guardarPerfil());
     }
 
+    // função que vai buscar o perfil do utilizador com o token guardado
     private void carregarPerfil() {
+        // crio o pedido para mandar para o servidor
         Request request = new Request.Builder()
                 .url(ApiConfig.PROFILE_URL)
                 .get()
                 .addHeader("Authorization", "Bearer " + jwt)
                 .build();
 
+        // faço a chamada à API em segundo plano para não bloquear a app
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
+                // volto para a interface porque a resposta vem noutra thread
                 runOnUiThread(() -> Toast.makeText(EditProfileActivity.this, "Erro: " + e.getMessage(), Toast.LENGTH_LONG).show());
             }
 
@@ -112,6 +125,7 @@ public class EditProfileActivity extends AppCompatActivity {
         });
     }
 
+    // função que envia as alterações do perfil para o servidor
     private void guardarPerfil() {
         String nome = etNome.getText().toString().trim();
         String telefone = etTelefone.getText().toString().trim();
@@ -135,6 +149,7 @@ public class EditProfileActivity extends AppCompatActivity {
             return;
         }
 
+        // preparo os dados que vão ser enviados no pedido
         RequestBody formBody = new FormBody.Builder()
                 .add("nome", nome)
                 .add("telefone", telefone)

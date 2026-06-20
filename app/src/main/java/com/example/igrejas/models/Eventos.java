@@ -1,8 +1,12 @@
 package com.example.igrejas.models;
 
+// Comentários adicionados como aluno para explicar melhor o código.
+
 import com.google.gson.annotations.SerializedName;
 
+// modelo dos eventos, com os nomes iguais aos campos da API quando é preciso
 public class Eventos {
+    // campos que guardam os dados deste objeto
     private int id;
 
     @SerializedName("id_users")
@@ -19,6 +23,7 @@ public class Eventos {
 
     private String local;
 
+    // construtor para criar o objeto já com valores
     public Eventos(String titulo, String tipo, String local, String dataHora) {
         this.nomeEvento = titulo;
         this.tipoEvento = tipo;
@@ -26,6 +31,7 @@ public class Eventos {
         this.dataHoraInicio = dataHora;
     }
 
+    // método para devolver um valor guardado
     public int getId() {
         return id;
     }

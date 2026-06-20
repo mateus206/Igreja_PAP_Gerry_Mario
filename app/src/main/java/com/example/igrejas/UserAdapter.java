@@ -1,5 +1,7 @@
 package com.example.igrejas;
 
+// Comentários adicionados como aluno para explicar melhor o código.
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import com.example.igrejas.models.User;
 
 import java.util.ArrayList;
 
+// este adapter mostra a informação do utilizador na lista
 public class UserAdapter extends  RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     ArrayList<User> listaUser;
@@ -22,6 +25,7 @@ public class UserAdapter extends  RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     @NonNull
     @Override
+    // aqui é criado o layout de cada item da lista
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_info_user, parent, false);
 
@@ -29,6 +33,7 @@ public class UserAdapter extends  RecyclerView.Adapter<UserAdapter.ViewHolder> {
     }
 
     @Override
+    // aqui coloco os dados dentro de cada item da lista
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         User user = this.listaUser.get(position);
 
@@ -37,6 +42,7 @@ public class UserAdapter extends  RecyclerView.Adapter<UserAdapter.ViewHolder> {
     }
 
     @Override
+    // devolve quantos elementos existem para o RecyclerView mostrar
     public int getItemCount() { return this.listaUser.size(); }
 
     class ViewHolder extends RecyclerView.ViewHolder {
